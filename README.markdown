@@ -1,8 +1,8 @@
 # About #
 
 ## How to Run ##
- * Eclipse: Run As-> Maven Build ->Goals jetty:run
- * CLI: mvn jetty:run
+ * Eclipse: Run As-> Maven Build ->Goals tomcat7:run
+ * CLI: mvn tomcat7:run
  
  in a browser go to <http://localhost:8080/tas-springMVC-cassandra/>
 
