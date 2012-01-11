@@ -10,6 +10,7 @@
   <properties>
         <java-version>1.6</java-version>
         <org.springframework-version>3.1.0.RELEASE</org.springframework-version>
+        <org.slf4j-version>1.5.10</org.slf4j-version>
     </properties>
   
   <dependencies>
@@ -19,7 +20,13 @@
       <version>4.7</version>
       <scope>test</scope>
     </dependency>
-    
+    <!-- cassandra hector -->
+    <dependency>
+	    <groupId>me.prettyprint</groupId>
+	    <artifactId>hector-core</artifactId>
+	    <version>1.0-2</version>
+	</dependency>
+	
      <!-- Spring -->
     <dependency>
         <groupId>org.springframework</groupId>
@@ -31,7 +38,19 @@
         <artifactId>spring-webmvc</artifactId>
         <version>${org.springframework-version}</version>
     </dependency>
-
+	
+	<!-- JSR 303 with Hibernate Validator -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.1.0.Final</version>
+		</dependency>
+		
     <!-- CGLIB, only required and used for @Configuration usage -->
     <dependency>
         <groupId>cglib</groupId>
@@ -65,6 +84,48 @@
         <version>1.2</version>
     </dependency>
     
+    <!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
   </dependencies>
   <build>
     <finalName>tas-springMVC-cassandra</finalName>
