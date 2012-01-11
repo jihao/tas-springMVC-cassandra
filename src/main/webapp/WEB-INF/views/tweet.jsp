@@ -10,26 +10,28 @@
 </head>
 <body>
 	<p>
-		Hi <s:property value="#session['SESSION_CURRENT_USER'].username" />, your account was created at: 
-		<s:date name="#session['SESSION_CURRENT_USER'].created_at" format="yyyy-MM-dd HH:mm:ss" />
+		Hi ${SESSION_CURRENT_USER.username}, your account was created at:
+		<fmt:formatDate value="${SESSION_CURRENT_USER.created_at }" pattern="yyyy-MM-dd HH:mm:ss"/> 
 	</p>
 	<p>Tweet</p>
-	<s:actionerror />
-	<s:form action="tweet">
-		<s:textarea name="message" label="I'd like to say" rows="5" cols="40" />
-		<s:submit value="Tweet" />
-	</s:form>
+	${error}
+	<form action="tweet">
+		<label for="message">I'd like to say</label>
+		<textarea id="message" rows="5" cols="40" name="message"></textarea><br>
+		<input type="submit" value="Tweet">
+	</form>
+	
 	<div id="tweetList">
-		<s:iterator value="#request.tweetList" status="status" var="tweet">
-			<div id='<s:property value="#status.index"/>'>
+		<c:forEach items="${tweetList}" varStatus="status" var="tweet">
+			<div id="${status.index }">
 				<div>
-					<s:hidden value="#tweet.id_key"></s:hidden>
-					<s:property value="#tweet.message"></s:property>
+					<input type="hidden" value="${tweet.id_key}"></input>
+					${tweet.message}
 				</div>
-				<s:property value="#tweet.user.username"/>
+				${tweet.user.username}
 				
 			</div>
-		</s:iterator>
+		</c:forEach>
 	</div>
 <jsp:include page="_footer.jsp"/>
 </body>

@@ -7,27 +7,16 @@
 <title>Register</title>
 </head>
 <body>
-	<h2>
-		<s:property value="user.username" />
-	</h2>
-	<h2>
-		<s:property value="user.created_at" />
-	</h2>
-	<h2>
-		<s:property value="user.tweets.size" />
-	</h2>
-	
 	<p>Register</p>
-
-	<s:form action="register">
-
-		<s:textfield name="user.username" label="Name" />
-		<s:password name="user.password" label="Password" />
-		<s:password name="password2" label="Confirm Password" />
-
-		<s:submit value="Submit" />
-
-	</s:form>
+	
+	<p>${error}</p>
+	<form action="register">
+		<label for="username">Name</label><input id="username" type="text" name="user.username"><br>
+		<label for="password">Password</label><input id="password" type="password" name="user.password"><br>
+		<label for="password2">Confirm password</label><input id="password2" type="password" name="password2"><br>
+		
+		<input type="submit">
+	</form>
 	
 <jsp:include page="_footer.jsp"/>
 </body>

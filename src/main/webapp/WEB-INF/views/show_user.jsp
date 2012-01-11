@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h2>
-		
+		Succeed
 	</h2>
 	<p>
-		 <s:property value="user.username" /> successfully registered, created at: <s:property value="user.created_at" />
+		 ${user.username} successfully registered, created at: ${user.created_at}
 		<br/>
 		<a href='<s:url action="loginUI"/>'>Sign in</a> to tweet!
 		

@@ -9,15 +9,14 @@
 <body>
 	<p>Sign In</p>
 	
-	<s:actionerror />
-	<s:form action="login">
-
-		<s:textfield name="user.username" label="Name" />
-		<s:password name="user.password" label="Password" />
+	<p>${error}</p>
+	<form action="login">
+		<label for="username">Name</label><input id="username" type="text" name="user.username"><br>
+		<label for="password">Password</label><input id="password" type="password" name="user.password"><br>
+		<label for="remember">Remember me</label><input id="remember" type="checkbox" name="remember">
 		
-		<s:submit value="Sign In" />
-
-	</s:form>
+		<input type="submit">
+	</form>
 	
 <jsp:include page="_footer.jsp"/>
 </body>
