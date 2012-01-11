@@ -10,7 +10,7 @@
 	<p>Register</p>
 	
 	<p>${error}</p>
-	<form action="register">
+	<form action="register" method="post">
 		<label for="username">Name</label><input id="username" type="text" name="user.username"><br>
 		<label for="password">Password</label><input id="password" type="password" name="user.password"><br>
 		<label for="password2">Confirm password</label><input id="password2" type="password" name="password2"><br>

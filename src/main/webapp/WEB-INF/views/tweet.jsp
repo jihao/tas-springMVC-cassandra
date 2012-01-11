@@ -15,7 +15,7 @@
 	</p>
 	<p>Tweet</p>
 	${error}
-	<form action="tweet">
+	<form action="tweet" method="post">
 		<label for="message">I'd like to say</label>
 		<textarea id="message" rows="5" cols="40" name="message"></textarea><br>
 		<input type="submit" value="Tweet">

@@ -8,9 +8,9 @@
 </head>
 <body>
 	<p>Sign In</p>
-	
+	<p>${flash_message}</p>
 	<p>${error}</p>
-	<form action="login">
+	<form action="login" method="post">
 		<label for="username">Name</label><input id="username" type="text" name="user.username"><br>
 		<label for="password">Password</label><input id="password" type="password" name="user.password"><br>
 		<label for="remember">Remember me</label><input id="remember" type="checkbox" name="remember">

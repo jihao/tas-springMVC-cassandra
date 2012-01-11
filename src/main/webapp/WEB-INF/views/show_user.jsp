@@ -13,7 +13,7 @@
 	<p>
 		 ${user.username} successfully registered, created at: ${user.created_at}
 		<br/>
-		<a href='<s:url action="loginUI"/>'>Sign in</a> to tweet!
+		<a href='<s:url action="login"/>'>Sign in</a> to tweet!
 		
 	</p>
 	
