@@ -12,13 +12,17 @@
 <c:choose>
 	<c:when test="${SESSION_CURRENT_USER != null}">
 		${ SESSION_CURRENT_USER.username }? <a href="<c:url value="logout"/>">Sign out</a>
+		
+		<p><a href="<c:url value="/tweet"/>">Normal Tweet</a></p>
+		<p><a href="<c:url value="/new/tweet"/>">REST API - New Tweet </a></p>
+		<p><a href="<c:url value="/tweets.json"/>">REST API - Show Tweets </a></p>
+		
 	</c:when>
 	<c:otherwise>
-		<a href="<c:url value="register"/>">Register</a> | <a href="<c:url value="login"/>">Sign in</a>		
+		<a href="<c:url value="register"/>">Register</a> | <a href="<c:url value="login"/>">Sign in</a>	to tweet	
 	</c:otherwise>
 </c:choose>
 </p>
-<p><a href="<c:url value="tweet"/>">Tweet</a></p>
 
 <p style="display:none;"><a href='<c:url value="compare?input1=S&input2=B"></c:url>'>Compare S &amp; B</a></p>
 <jsp:include page="_footer.jsp"/>

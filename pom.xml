@@ -65,6 +65,20 @@
         <version>1</version>
     </dependency>
 
+		<!-- Jackson JSON Processor -for REST-->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+
+		<!-- Rome Atom+RSS -for REST-->
+		<dependency>
+			<groupId>net.java.dev.rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
     <!-- Servlet -->
     <dependency>
         <groupId>javax.servlet</groupId>
