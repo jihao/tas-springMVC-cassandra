@@ -6,33 +6,67 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href='<c:url value="/resources/css/site.css" />'>
 <title>Tweet</title>
 </head>
 <body>
-	<p>
-		Hi ${SESSION_CURRENT_USER.username}, your account was created at:
-		<fmt:formatDate value="${SESSION_CURRENT_USER.created_at }" pattern="yyyy-MM-dd HH:mm:ss"/> 
-	</p>
-	<p>Tweet</p>
-	${error}
+<div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>tas-springMVC-cassandra <small></small></h1>
+          <h1><small>a simple twitter alike system (tas) build upon springMVC and cassandra</small></h1>
+        </div>
+        <div class="row">
+          <div class="span10">
+            <h2>Tweet</h2>
+            <jsp:include page="_message.jsp"/>
+			<div class="alert-message block-message info">
+		        <p>
+					Hi <strong>${SESSION_CURRENT_USER.username}</strong>, your session was created at:
+					<fmt:formatDate value="${SESSION_CURRENT_USER.created_at }" pattern="yyyy-MM-dd HH:mm:ss"/> 
+				</p>
+	        </div>
+	      
 	<form action="tweet" method="post">
-		<label for="message">I'd like to say</label>
-		<textarea id="message" rows="5" cols="40" name="message"></textarea><br>
-		<input type="submit" value="Tweet">
+	<fieldset>
+		  <div class="clearfix">
+            <label for="message">I'd like to say</label>
+            <div class="input">
+              <textarea id="message" name="message" rows="5" style="width: 400px;"></textarea>
+            </div>
+          </div>
+          <div class="actions">
+		    <input type="submit" class="btn primary" value="Tweet">
+		  </div>
+	</fieldset>
 	</form>
 	
 	<div id="tweetList">
+		<table class="bordered-table">
+		<tr><th>#</th><th>time uuid key</th><th>message</th><th>user</th></tr>
 		<c:forEach items="${tweetList}" varStatus="status" var="tweet">
-			<div id="${status.index }">
-				<div>
-					<input type="hidden" value="${tweet.id_key}"></input>
-					${tweet.message}
-				</div>
-				${tweet.user.username}
-				
-			</div>
+			<tr>
+				<td>${status.index}</td><td>${tweet.id_key}</td><td>${tweet.message}</td><td>${tweet.user.username}</td>
+			</tr>
 		</c:forEach>
+		</table>
 	</div>
-<jsp:include page="_footer.jsp"/>
+	
+          </div>
+          <div class="span4">
+            <h3>Sidebar</h3>
+             <p>
+				<a href='<c:url value="/home"/>' class="btn primary">home</a>
+			</p>
+          </div>
+        </div>
+      </div>
+
+      <jsp:include page="_footer.jsp"/>
+    
+</div>
+	
 </body>
 </html>

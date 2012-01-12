@@ -1,5 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<hr/>
-<p>
-    <a href='<c:url value="/home"/>'>home</a>
-</p>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<footer>
+	<p>&copy; haojii 2011</p>
+</footer>

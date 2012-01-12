@@ -4,20 +4,65 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href='<c:url value="/resources/css/site.css" />'>
 <title>Sign In</title>
 </head>
 <body>
-	<p>Sign In</p>
-	<p>${flash_message}</p>
-	<p>${error}</p>
-	<form action="login" method="post">
-		<label for="username">Name</label><input id="username" type="text" name="user.username"><br>
-		<label for="password">Password</label><input id="password" type="password" name="user.password"><br>
-		<label for="remember">Remember me</label><input id="remember" type="checkbox" name="remember">
-		
-		<input type="submit">
-	</form>
 	
-<jsp:include page="_footer.jsp"/>
+<div class="container">
+
+      <div class="content">
+        <div class="page-header">
+          <h1>tas-springMVC-cassandra <small></small></h1>
+          <h1><small>a simple twitter alike system (tas) build upon springMVC and cassandra</small></h1>
+        </div>
+        <div class="row">
+          <div class="span10">
+            <h2>Sign In</h2>
+			<jsp:include page="_message.jsp"/>
+			
+			<form action="login" method="post">
+				<fieldset>
+				  <div class="clearfix">
+		            <label for="username">Name</label>
+		            <div class="input">
+		             <input id="username" type="text" name="user.username">
+		            </div>
+		          </div>
+		          <div class="clearfix">
+		            <label for="password">Password</label>
+		            <div class="input">
+		             <input id="password" type="password" name="user.password">
+		            </div>
+		          </div>
+		          <div class="clearfix">
+		            <label for="remember"></label>
+		            <div class="input">
+		             <input id="remember" type="checkbox" name="remember">
+		             <span>Remember me</span>
+		            </div>
+		          </div>
+				<div class="actions">
+		            <input type="submit" class="btn primary" value="Sign In">&nbsp;<button type="reset" class="btn">Cancel</button>
+		        </div>
+				
+				</fieldset>
+			</form>
+	
+          </div>
+          <div class="span4">
+            <h3>Sidebar</h3>
+             <p>
+				<a href='<c:url value="/home"/>' class="btn primary">home</a>
+			</p>
+          </div>
+        </div>
+      </div>
+
+      <jsp:include page="_footer.jsp"/>
+
+    </div>
+    
 </body>
 </html>
