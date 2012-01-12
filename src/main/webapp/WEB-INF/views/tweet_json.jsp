@@ -29,7 +29,7 @@
 				</p>
 	        </div>
 	      
-	<form action="/new/tweet.json" method="post">
+	<form action="<c:url value="/new/tweet.json"></c:url>" method="post">
 	<fieldset>
 		  <div class="clearfix">
             <label for="message">I'd like to say</label>
